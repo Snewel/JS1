@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //ИМИТАЦИЯ РАБОТЫ БАЗЫ ДАННЫХ И СЕРВЕРА
+
+        let PRODUCTS_NAMES = ['Processor', 'Display', 'Notebook', 'Mouse', 'Keyboard']
+        let PRICES = [100, 120, 1000, 15, 18]
+        let IDS = [0, 1, 2, 3, 4]
+
+        let products = [] //массив объектов
+        
+        let cart = {
+            items: [],
+            total: 0,
+            addProduct (id) { // добавление товара в корзинку
+                let find = products.find (el => el.product_id === id)
+                cart.items.push (Object.assign ({}, find, {quantity: 1}))  // создаём новый объект в массив items корзинки     
+            },
+            sumCart (id) { // здесь мы должны закинуть id из массива items корзинки. 
+                this.total += cart.items[id].price
+            }
+        }
+        
+
+        function getData () {
+            for (let i = 0; i < IDS.length; i++) {
+                products.push (createNewProduct (i))
+            }
+        }
+
+        function createNewProduct (index) {
+            return {
+                product_name: PRODUCTS_NAMES [index],
+                price: PRICES [index],
+                product_id: IDS [index]
+            }
+        }
+
+        // function addProduct (id) {
+        //     let find = products.find (el => el.product_id === id)
+        //     cart.items.push (Object.assign ({}, find, {quantity: 1}))
+        // }
+
+        
+    </script>
+</body>
+</html>
