@@ -1,10 +1,33 @@
+.main {
+    padding: 0px 20px 0px 20px;
+}
+.header {
+    min-height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+    background-image: url(http://365psd.ru/images/backgrounds/diagonal-noise.png);
+}
+.header-wrapper {
+    display: flex;
+    align-items: center;
+}
+.header-logo {
+
+}
+.header-name {
+    font-size: 45px;
+    margin-left: -50px;
+}
 .products {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
-    padding: 50px;
     box-sizing: border-box;
+    margin: 30px 0 30px 0;
+    background-image: url(http://365psd.ru/images/backgrounds/bg-light-4855.png);
 }
 .product {
     display: flex;
@@ -13,6 +36,8 @@
     max-width: 50%;
     box-sizing: border-box;
     margin: 0 20px 20px 0;
+    padding: 10px;
+    font-size: 23px;
 }
 .product-img {
 
@@ -51,4 +76,12 @@ background-color: rgb( 75, 183, 141 );
 }
 .product-buy:active {
 background-color: rgb( 43, 153, 91 );
+}
+.footer {
+    background-image: url(http://365psd.ru/images/backgrounds/diagonal-noise.png);
+}
+.footer-txt {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
 }
