@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--  -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/icon.png" type="image/png">
+    <title>Камень Ножницы Бумага</title>
 </head>
-
 <body>
-    <p>Первое дз, скрипт выполняется после полной загрузки страницы, благодарю атрибуту "defer" тега &lt srcipt &gt</p>
-    <script src="script.js" defer></script>
-</body>
+<header class="header"> 
+    <div class="title">
+        <span>Камень</span>
+        <span>Ножницы</span>
+        <span>Бумага</span>
+    </div> 
+</header>
+<main class="main">
+    <div class="info">
+        <div class="info-player">
+            <div class="player-nick"></div> <!-- имя игрока -->
+            <span class="player-total">0</span> <!-- очки игрока --> 
+        </div>
+        <div class="info-pc">
+            <div class="pc-nick">Компьютер</div>
+            <span class="pc-total">0</span> <!-- очки комьютера  -->
+        </div>
+    </div> 
+    <div class="game-wrap">
+        <div class="result-game">Чтобы начать играть выбери своё оружие</div> <!-- результат игры --> 
+        <div class="game" style="display: none;">
+            <div class="result-player">
+                <img src="" alt="Оружие игрока" class="element-player" width="150" height="110"> <!-- картинка оружия игрока -->
+                <span class="element-namePlayer"></span> <!-- название оружия игрока -->
+            </div>
+            <div class="result-pc">
+                <img src="" alt="Оружие компьютера" class="element-pc" width="150" height="110">  <!-- картинка оружия компа -->
+                <span class="element-namePc"></span> <!-- название оружия компа -->
+            </div>
+        </div>
+        <div class="game-tools">
+            <button class="element" onclick="startGame(0)">Камень</button>
+            <button class="element" onclick="startGame(1)">Ножницы</button>             
+            <button class="element" onclick="startGame(2)">Бумага</button>
+        </div>
+    </div> 
+</main>
+<footer class="footer">
+    <span class="footer-rights"> All rights reserved by <i>Snewel</i> &copy;</span>
+</footer>
 
+
+<script src="main.js"></script>
+</body>
 </html>
