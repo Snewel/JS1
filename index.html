@@ -2,55 +2,134 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="img/icon.png" type="image/png">
-    <title>Камень Ножницы Бумага</title>
+    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon"> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/main.js"></script>
+    <title>Каршеринг</title>
 </head>
 <body>
-<header class="header"> 
-    <div class="title">
-        <span>Камень</span>
-        <span>Ножницы</span>
-        <span>Бумага</span>
-    </div> 
-</header>
-<main class="main">
-    <div class="info">
-        <div class="info-player">
-            <div class="player-nick"></div> <!-- имя игрока -->
-            <span class="player-total">0</span> <!-- очки игрока --> 
-        </div>
-        <div class="info-pc">
-            <div class="pc-nick">Компьютер</div>
-            <span class="pc-total">0</span> <!-- очки комьютера  -->
-        </div>
-    </div> 
-    <div class="game-wrap">
-        <div class="result-game">Чтобы начать играть выбери своё оружие</div> <!-- результат игры --> 
-        <div class="game" style="display: none;">
-            <div class="result-player">
-                <img src="" alt="Оружие игрока" class="element-player" width="150" height="110"> <!-- картинка оружия игрока -->
-                <span class="element-namePlayer"></span> <!-- название оружия игрока -->
-            </div>
-            <div class="result-pc">
-                <img src="" alt="Оружие компьютера" class="element-pc" width="150" height="110">  <!-- картинка оружия компа -->
-                <span class="element-namePc"></span> <!-- название оружия компа -->
-            </div>
-        </div>
-        <div class="game-tools">
-            <button class="element" onclick="startGame(0)">Камень</button>
-            <button class="element" onclick="startGame(1)">Ножницы</button>             
-            <button class="element" onclick="startGame(2)">Бумага</button>
-        </div>
-    </div> 
-</main>
-<footer class="footer">
-    <span class="footer-rights"> All rights reserved by <i>Snewel</i> &copy;</span>
-</footer>
+<div class="container">
+  <div class="header-wrap">
+    <img class="header-logo" src="img/logo.png" alt="Логотип" width="70" height="70">
+  </div>
+  <header class="header">
+    <div class="header-wrap1">
+      <ul class="menu">
+    <li class="menu-list">
+      <a class="menu-list-link" href="#history-carsh">Каршеринг</a>
+      <em>Кар...что? Хочу узнать подробнее!</em>
+    </li>
+    <li class="menu-list">
+      <a class="menu-list-link" href="#about-as">О&nbsp;нас</a>
+      <em>Расскажем о&nbsp;себе всё!</em>
+    </li>
+    <li class="menu-list">
+      <a class="menu-list-link" href="#conditions">Условия аренды</a>
+      <em>Немного обязательных пунктов...</em>
+    </li>
+    <li class="menu-list">
+      <a class="menu-list-link" href="#autopark">Автопарк</a>
+      <em>Лучшие автомобили специально для Вас!</em>
+    </li>
+    <li class="menu-list">
+      <a class="menu-list-link" href="#contact">Контакты</a>
+      <em>Звоните! Заходите в&nbsp;гости!</em>
+    </li>
+    <li class="menu-list">
+       <a class="menu-list-link" href="javascript:PopUpShow()">Остались вопросы?</a> 
+      <em>Мы&nbsp;с&nbsp;Вами свяжемся!</em>
+    </li>
+      </ul>
+    </div>
+    <div class="popup" style="display: none;">
+      <div class="popup-content">
+         <form action="#" class="form-feedback"> <!-- форма не обрабатывается, по кнопке "отправить" происходит закрытие окна обратной связи, тк бэкенда нет  -->
+          <span class="form-title">Мы&nbsp;свяжемся с&nbsp;Вами в&nbsp;ближайшее время!</span>
+          <input type="text" placeholder="Имя" class="form-input" required>
+          <input type="email" placeholder="Email" class="form-input">
+          <input type="tel" placeholder="Телефон" class="form-input" required>         
+          <input type="submit" value="Отправить" class="form-submit" onclick="PopUpHide()">
+        </form> 
+      </div>
+    </div>
+  </header>
+  <section class="main">
+    <h1 class="main-title">Каршеринг - возьми автомобиль прямо сейчас!</h1>
+    <img src="img/main-img.png" alt="Каршеринг" class="main-img" width="1000" height="500">
+  </section>
+  <section class="galery-cars">
+    <h2 class="galery-cars-name" id="autopark">Nissan Qashqai</h2>
+    <img class="galery-cars-img-main" src="img/auto.jpg" alt="auto" />
+    <div class="galery-cars-img-others">
+      <a href="img/auto-1.jpg" title="Skoda Rapid"><img src="img/auto-1-s.jpg"/></a>
+      <a href="img/auto-2.jpg" title="Volkswagen Polo"><img src="img/auto-2-s.jpg"/></a>
+      <a href="img/auto-3.jpg" title="KIA Rio X-Line"><img src="img/auto-3-s.jpg"/></a>
+      <a href="img/auto.jpg" title="Nissan Qashqai"><img src="img/auto-s.jpg"/></a>
+      <a href="img/auto-4.jpg" title="Hyundai Solaris"><img src="img/auto-4-s.jpg"/></a>
+    </div>
+  </section>
+  <section class="story-carsharing" >
+    <h1 class="story-carsharing-title" id="history-carsh">Что такое каршеринг?</h2>
+    <p class="story-carsharing-text">Fortune day out married parties. Sportsman do offending supported extremity breakfast by listening. Course sir people worthy horses add entire suffer. Any delicate you how kindness horrible outlived servants. If in so bred at dare rose lose good. Celebrated delightful an especially increasing instrument am. Am wound worth water he linen at vexed.
+      Whatever throwing we on resolved entrance together graceful. He felicity no an at packages answered opinions juvenile. Called though excuse length ye needed it he having. Hard do me sigh with west same lady. Detract yet delight written farther his general. Equally he minutes my hastily. Agreeable promotion eagerness as we resources household  
+    </p>
 
+    </section>  
+  <section class="story-company">
+    <h1 class="story-company-title" id="about-as">История нашей компании</h2>
+    <p class="story-company-text">Fortune day out married parties. Sportsman do offending supported extremity breakfast by listening. Course sir people worthy horses add entire suffer. Any delicate you how kindness horrible outlived servants. If in so bred at dare rose lose good. Celebrated delightful an especially increasing instrument am. Am wound worth water he linen at vexed.
+      Whatever throwing we on resolved entrance together graceful. He felicity no an at packages answered opinions juvenile. Called though excuse length ye needed it he having. Hard do me sigh with west same lady. Detract yet delight written farther his general. Equally he minutes my hastily. Agreeable promotion eagerness as we resources household  
+    </p>
 
-<script src="main.js"></script>
+  </section>
+  <section class="story-sharing" >
+    <h1 class="story-sharing-title" id="conditions">Условия аренды автомобиля</h1>
+    <div class="story-sharing-contidions">
+      <h3 class="story-sharing-contidions-h3">Возраст</h3>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi malesuada, ante at feugiat tincidunt, enim massa
+        gravida metus, commodo lacinia massa diam vel eros. Proin eget urna. Nunc fringilla neque vitae odio. Vivamus vitae
+      </p>
+      <h3 class="story-sharing-contidions-h3">Стаж</h3>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi malesuada, ante at feugiat tincidunt, enim massa
+        gravida metus, commodo lacinia massa diam vel eros. Proin eget urna. Nunc fringilla neque vitae odio. Vivamus vitae
+      </p>
+      <h3 class="story-sharing-contidions-h3" >Гражданство</h3>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi malesuada, ante at feugiat tincidunt, enim massa
+        gravida metus, commodo lacinia massa diam vel eros. Proin eget urna. Nunc fringilla neque vitae odio. Vivamus vitae
+      </p>
+      <h3 class="story-sharing-contidions-h3">Оплата</h3>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi malesuada, ante at feugiat tincidunt, enim massa
+        gravida metus, commodo lacinia massa diam vel eros. Proin eget urna. Nunc fringilla neque vitae odio. Vivamus vitae
+      </p>
+      <h3 class="story-sharing-contidions-h3">Смартфон</h3>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi malesuada, ante at feugiat tincidunt, enim massa
+        gravida metus, commodo lacinia massa diam vel eros. Proin eget urna. Nunc fringilla neque vitae odio. Vivamus vitae
+      </p>
+    </div>
+  </section>
+  <aside class="aside">
+    <div class="aside-wrapper">
+      <h3 class="aside-wrapper-title">Здесь может быть реклама</h3>
+      <p class="aside-wrapper-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi malesuada, ante at feugiat tincidunt, enim massa
+        gravida metus, commodo lacinia massa diam vel eros. Proin eget urna. Nunc fringilla neque vitae odio. Vivamus vitae ligula.        
+      </p>
+      <img src="img/close_aside.gif" alt="delete" class="delete"/>
+    </div>
+  </aside>
+  <footer class="footer">
+    <span class="footer-wrapper-title" id="contact">Контакты</span>
+      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A190e37f124e8528a51fa32ad2ee0bf3552220fd418438a5f8949adacd507d00c&amp;width=437&amp;height=194&amp;lang=ru_RU&amp;scroll=true"></script>
+    <div class="footer-wrapper1">
+      <span class="footer-wrapper1-contact"> <i class="fa fa-mobile"></i>+7-(495)-241-1095 </span>
+      <span class="footer-wrapper1-contact"> <i class="fa fa-map-marker"></i>124155, Москва, Смоленская, 4/7</span>
+      <img src="img/appStore-logo.jpg" alt="AppStore" class="apps-img" width="250" height="60">
+      <img src="img/googlePlay-logo.png" alt="GooglePlay" class="apps-img" width="250" height="60">
+    </div>
+  </footer>
+</div>
 </body>
 </html>
